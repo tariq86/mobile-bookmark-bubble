@@ -1,8 +1,8 @@
 /*
   Modified by Robert Gerald Porter, for Weever Apps Inc.
 
-  Version:  1.1.3
-  Release:  October 21, 2011
+  Version:  1.1.6
+  Release:  5 August 2014
 
   Based upon Mobile Bookmark Bubble by Google Inc., original copyrights and license below.
 
@@ -23,6 +23,9 @@
   1.1.2 : - Android 4.0 Tablet / Mobile both support.
   1.1.3 : - Fork by wiifm
           - iOS7 support.
+  1.1.4 : - Android support enhancements - by okamototk
+  1.1.5 : - Add class names to bookmark-bubble elements - by rjclardy
+  1.1.6 : - Add Android full-screen - by triq6
 
   ##########################
 
@@ -450,7 +453,7 @@ google.bookmarkbubble.Bubble.prototype.hasBeenDismissedTooManyTimes_ =
  * @private
  */
 google.bookmarkbubble.Bubble.prototype.isFullscreen_ = function() {
-  return !!window.navigator.standalone;
+  return (!!window.navigator.standalone || (screen.height - document.documentElement.clientHeight < 40));
 };
 
 
